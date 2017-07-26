@@ -14,19 +14,34 @@ Using above information, this code will answer following questions:
     Virtual Box
     PostgreSQL
     
- ## How to:
+ ## How to install and use:
 * Install [Virtual Box](https://www.virtualbox.org/wiki/Downloads), [Vagrant](https://www.vagrantup.com/downloads.html).
 * Clone the VM configuration [vm](https://github.com/udacity/fullstack-nanodegree-vm)
 * [Download this repo](https://github.com/narotamsingh/Web-Server-Logs-Analysis/archive/master.zip) Or [Clone](https://github.com/narotamsingh/Web-Server-Logs-Analysis.git) this repo into the `/vagrant` directory.
 * Launch the VM:
-  *`$ vagrant up`
+  * `$ vagrant up`
 * SSH into the VM:
-  * On Mac/Linux `$ vagrant ssh`
+  * `$ vagrant ssh`
 * In the VM navigate to the `/vagrant` folder:
-  * `vagrant$ cd /vagrant`
+  * `vagrant@vagrant:~$ cd /vagrant`
 * [Download Data](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip).
   The file inside is called `newsdata.sql`, put this file into the `vagrant` directory, which is shared with your virtual machine.
 * Load the data into the `news` database already in the VM:
-  * `vagrant$ psql -d news -f newsdata.sql`
-* Run python report script:
-  * `vagrant$ python logs_analysis.py`
+  * `vagrant@vagrant:~$ psql -d news -f newsdata.sql`
+* Run python tool:
+  * `vagrant@vagrant:~$ python wlogs_analysis.py`
+
+ ## Output:
+ Most popular three articles of all time:
+"Candidate is jerk, alleges rival" - 338647 views
+"Bears love berries, alleges bear" - 253801 views
+"Bad things gone, say good people" - 170098 views
+
+Most popular article authors of all time:
+Ursula La Multa - 507594 views
+Rudolf von Treppenwitz - 423457 views
+Anonymous Contributor - 170098 views
+Markoff Chaney - 84557 views
+
+On which days did more than 1% of requests lead to errors:
+July 17, 2016 - 2.26% errors
