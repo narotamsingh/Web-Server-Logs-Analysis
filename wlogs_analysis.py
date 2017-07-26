@@ -69,7 +69,8 @@ def error():
         print '{:%B %d, %Y} - {}% errors\n'.format(item[0], item[1])
     db.close()
 
+if __name__ == '__main__':
+    article()
+    author()
+    error()
 
-article()
-author()
-error()
