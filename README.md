@@ -1,6 +1,5 @@
 # Web-Server-Logs-Analysis
 ## By Narotam Singh
-![By Narotam Singh] (https://github.com/narotamsingh/)
 An internal reporting tool that will use information from the database ( contains newspaper articles, as well as the web server log for the site) to discover what kind of articles the site's readers like. The log has a database row for each time a reader loaded a web page. 
 
 ## Output of code:
@@ -15,4 +14,19 @@ Using above information, this code will answer following questions:
     Virtual Box
     PostgreSQL
     
- ## 
+ ## How to:
+* Install [Virtual Box](https://www.virtualbox.org/wiki/Downloads), [Vagrant](https://www.vagrantup.com/downloads.html).
+* Clone the VM configuration [vm](https://github.com/udacity/fullstack-nanodegree-vm)
+* [download](https://github.com/narotamsingh/Web-Server-Logs-Analysis/archive/master.zip)) Or [Clone](https://github.com/narotamsingh/Web-Server-Logs-Analysis.git) this repo into the `/vagrant` directory.
+* Launch the VM:
+    `vagrant$ vagrant up`
+* SSH into the VM:
+    On Mac/Linux `vagrant$ vagrant ssh`
+* In the VM navigate to the `/vagrant` folder:
+  * `$ cd /vagrant`
+* [Download Data](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip).
+  The file inside is called `newsdata.sql`, put this file into the `vagrant` directory, which is shared with your virtual machine.
+* Load the data into the `news` database already in the VM:
+    `$psql -d news -f newsdata.sql`
+* Run python report script:
+    `$ python logs_analysis.py`
