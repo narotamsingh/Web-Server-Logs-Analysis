@@ -16,6 +16,7 @@ def connect(db_name=“news”):
     except:
         print "Unable to connect to the database",db_name
 
+
 def fetch_query(query):
     """
     Connect to the database, query, fetch results, close connection, return results
@@ -25,8 +26,8 @@ def fetch_query(query):
     return cursor.fetchall()
     db.close()
 
-        
-def article():
+
+def print_top_articles():
     """Fetch and prints most popular three articles of all time"""
     Query = """
         SELECT articles.title, count(log.path) AS num
@@ -42,7 +43,7 @@ def article():
         print '\"{}\" - {} views'.format(item[0], item[1])
 
 
-def author():
+def print_top_authors():
     """Fetch and prints most popular article authors of all time"""
     Query = """
         SELECT authors.name, count(log.path) AS num
@@ -58,7 +59,7 @@ def author():
         print '{} - {} views'.format(item[0], item[1])
 
 
-def error():
+def print_top_error_days():
     """Fetch and print days on which more than 1% of requests lead to errors"""
     Query = """
         SELECT DATE(time),
@@ -80,7 +81,6 @@ def error():
 
 
 if __name__ == '__main__':
-    article()
-    author()
-    error()
-
+    print_top_articles()
+    print_top_authors()
+    print_top_error_days()
