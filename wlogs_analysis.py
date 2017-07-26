@@ -23,8 +23,9 @@ def fetch_query(query):
     """
     db, cursor = connect()
     cursor.execute(query)
-    return cursor.fetchall()
+    result = cursor.fetchall()
     db.close()
+    return result
 
 
 def print_top_articles():
