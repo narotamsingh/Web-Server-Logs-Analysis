@@ -7,19 +7,19 @@ using the psycopg2 module to connect to the database.
 '''
 
 
-def connect(db_name=“news”):
+def connect(db_name="news"):
     """Connect to database. Returns a database connection """
     try:
         db = psycopg2.connect("dbname={}".format(db_name))
         cursor = db.cursor()
         return db, cursor
     except:
-        print "Unable to connect to the database",db_name
+        print "Unable to connect to the database", db_name
 
 
 def fetch_query(query):
     """
-    Connect to the database, query, fetch results, close connection, return results
+    Connect to database, query, fetch results, close connection, return results
     """
     db, cursor = connect()
     cursor.execute(query)
