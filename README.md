@@ -28,7 +28,7 @@ Using above information, this code will answer following questions:
   The file inside is called `newsdata.sql`, put this file into the `vagrant` directory, which is shared with your virtual machine.
 * Load the data into the `news` database already in the VM:
   * `vagrant@vagrant:~$ psql -d news -f newsdata.sql`
-* Run python tool:
+* Run application:
   * `vagrant@vagrant:~$ python wlogs_analysis.py`
 
  ## Output:
